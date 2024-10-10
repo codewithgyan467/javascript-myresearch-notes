@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a{
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        color: brown;
+       
+    }
+</style>
+<body>
+    <a href="" onclick="alert('Kya bey?')">Click Here</a>
+    <a href="" onclick="callingFunction()">Click Here</a>
+    <a href="" id="thirdway">Click Here</a>
+    <a href="" class="fourthway">Click Here</a>
+    <p id="myP" onmousedown="mousedown()" onmouseup="mouseUp()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nihil voluptatum sunt in hic vitae, facilis error porro veritatis dicta dolorum quia corporis temporibus totam repellendus consequuntur laboriosam, molestiae consectetur.</p>
+   
+    <script>
+        const callingFunction =()=>
+    {
+        alert('Most Common way of writting function');
+    }
+    const thirdway = documnet.getElementById("thirdway");
+    thirdway.onclick =function()
+    {
+        alert('mostcommon way of writting again');
+    }
+    const fourthway=document.querySelector('.fourthway');
+fourthway.addEventListener('click',()=>{
+    alert('I Love You');
+}
+)
+
+    </script>
+</body>
+</html>

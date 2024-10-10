@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p class="para">Hi i am Gyandeep</p>
+<p class="para">A passionate front end devloper from ASSAM</p>
+<h1 id="heading">Chande the content of H1</h1>
+
+<br>
+<form action="">
+    <label for="">Male</label>
+    <input type="radio" name="gender" id="  ">
+    <label for="">Female</label>
+    <input type="radio" name="gender" id="  ">
+</form>
+<li class=""></li>
+    <button onclick="changeContent()">click me</button>
+  <script>
+    const changeContent=()=>
+  {
+document.getElementById('heading').innerHTML="This is javascript";//for id
+console.log(document.getElementsByClassName('para'));//for class
+console.log(
+ document.getElementsByTagName('p'));
+ console.log( document.getElementsByName('gender'));
+ document.querySelector('#heading').innerHTML="Magic of javascript";//#for id
+ document.querySelector('.para').innerHTML="Magic of javascript again";//for class(only first matching value)
+ 
+  }
+  </script>  
+</body>
+</html>
