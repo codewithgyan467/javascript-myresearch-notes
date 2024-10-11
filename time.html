@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Want to show my Name</p>
+        <p id="showMyName"></p>
+        <br>
+        <button id="btn">Click Here</button>
+        <p>Click "Try It".Wait 3seconds.The page will alert"hello"</p>
+        <p>Click "Stop It"to prevent the first function to execute</p>
+        <p>(You must click "Stop" brfore the 2 seconds are up.)</p>
+        <button onclick="myVar=setTimeout(myFunction,2000)">Try It</button><br>
+        <button onclick="clearTimeout(myVar)">Stop It</buttton>
+            <br>
+            <br>
+            <br>
+
+            
+    </div>
+    <div>
+    <p2>Can You Stop me at 5</p2>
+            <br>
+            <button id="btn2">Click here</button></div>
+    <script>
+        const showMyName=document.querySelector('#showMyName');
+        const btn=document.querySelector('#btn');
+        const showMyName1=()=>
+    { showMyName.innerHTML = "Loading......";
+setTimeout(()=>{
+   
+showMyName.innerHTML="Gyandeep Duwarah";
+},1000)
+    };
+
+
+        btn.addEventListener('click',showMyName1);
+        function myFunction(){
+            alert("Hello");
+        };
+
+
+
+const stopnum=document.querySelector('p2');
+const btn2=document.querySelector('#btn2');
+let mum=0;
+const showMyNum=()=>{
+    stopNum.innerHTML = "Loading...";
+    setInterval(()=>{
+    stopNum.innerHTML=`${num}`;
+    num++;
+},1000)
+}
+btn2.addEventListener('click',showMyNum);
+;
+console.log(`${num}`);
+</script>
+</body>
+</html>

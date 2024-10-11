@@ -12,13 +12,23 @@
         <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onekeyup="keyUp()">
         <br/>
         <p id="keys"></p>
+        
+        <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onekeyup="keyUp()">
+        <br/>
+        <p id="key"></p>
     </div>
 </div>
 <script>
     const keyPress=()=>{
     document.getElementById('keys').innerHTML=`you press ${event.key} and it's code is ${event.code}`;
 }
-
+//better use the 2nd and 3rd once
+const keyDown=()=>{
+    document.getElementById('key').innerHTML='key is Down';    
+}
+const keyUp=()=>{
+    document.getElementById('key').innerHTML='key is up';    
+}
  
 
 </script>
