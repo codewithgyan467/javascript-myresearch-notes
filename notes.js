@@ -341,3 +341,48 @@ const obj2={
     }
 }
 obj2.getData();
+//array destructuring
+const myBiodata=['Gyandeep',21,'Duwarah']
+let [myFname,myAge,myLname,myDegree="Bsc IT"]= myBiodata;
+console.log(myFname);
+console.log(myDegree);//dynamic value included
+//objec destructuring
+// let {myFname,myLname,myAge,myDegree}=myBiodata;
+// console.log(myAge);
+//how to get a dynamic value or key in object
+let myName= "Gyandeep";
+let myAge1=21;
+const myBio={
+    [myName] : "Hello how are you",
+    [18+3] : "Is my age",//allows us to do mathematical operations
+    myAge1,
+    myName
+
+}
+console.log(myBio);
+//spread operator add more values
+const color = ['red','green','blue','white'];
+const myFavColor =[...color,'yellow','black'];
+console.log(myFavColor);
+console.log(color.includes('green'));//es7 features
+console.log(color.includes('purple'));//es7features
+
+//expo operator **
+console.log(2**3);
+//ES8 Features
+let name1= "Gyandeep".padStart(12);//padding like css from end it uses padEnd()
+console.log(name1);
+//convereting arrays
+const person={
+    name:"Gyandeep",
+    age:21,
+
+}
+console.log(Object.entries(person));
+//ES8 2018 
+const person1={name:'Gyandeep',age:21};
+const sperson={...person1}//person also get the value of the person1
+console.log(person1);
+console.log(sperson);
+// as we say .reduce method can only make arrays into single array but not nested array but here using.flat we can overcome this
+console.log(arr2.flat());//even nested or dual arrays are converted into single but only till one level 
