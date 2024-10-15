@@ -302,15 +302,42 @@ console.log(Math.trunc(4.5));
 //$0.style.color="pink"
 //document.vody.style.background="pink";
 //alert
-alert(location.href);
-if(confirm("Want to visit Google?")){
-    location.href="https://www.google.com";
-}
+
 //dom
 //document.body.child
 //document.body.firstElementChild
 //child.style.color="red"
 
+//OOPS in javascript 
+//creating object
+let bioData={
+    nyName:"Gyandeep Duwarah",
+    myAge:"25",
+    getData:function(){           //using munction(methods)in oops
+console.log(`My name is ${bioData.nyName}and my age is ${bioData.myAge}`);
+    }
+}
+console.log(bioData.nyName);
+//using this comand in objects
+const obj ={
+    myAge:21,
+    myName(){
+        console.log(this.myAge);
+    }
 
+}
+obj.myName();//useless in fat arrow function because of es6javascript
+const obj2={
+    myName:{
+        realName:"Gyandeep",
+        surname:"Duwarah",
 
+    },
 
+    myAge:21,
+    getData(){
+        console.log(`My name is ${this.myName.realName}and my surname is ${this.myName.surname} and my age is ${this.myAge}`);
+        
+    }
+}
+obj2.getData();
