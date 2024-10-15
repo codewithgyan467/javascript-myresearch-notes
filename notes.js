@@ -385,4 +385,23 @@ const sperson={...person1}//person also get the value of the person1
 console.log(person1);
 console.log(sperson);
 // as we say .reduce method can only make arrays into single array but not nested array but here using.flat we can overcome this
-console.log(arr2.flat());//even nested or dual arrays are converted into single but only till one level 
+console.log(arr2.flat());//even nested or dual arrays are converted into single but only till one level but it can be overcome by using .flat(1-infinity)
+console.log(arr2.flat(Infinity));
+//to change objects to array
+const arrobj = Object.entries(person1);
+console.log(arrobj);
+//again to change arrays to object
+console.log(Object.fromEntries(arrobj));
+//Es2020
+//1.BigInt
+let oldNum =Number.MAX_SAFE_INTEGER;
+console.log(oldNum);
+const newNum=9007199254740991n + 12n;//bigger int
+console.log(newNum);
+//use strict
+y=3.14;
+console.log(y);
+// "use strict";     this i usestrict where we have to declare a variable or function
+// x=3.14;  --->  const x=3.14;
+// console.log(x);
+
