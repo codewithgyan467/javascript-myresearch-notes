@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Anime Character</title>
+    <link rel="stylesheet" href="waifu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="waifu-card">
+            <div class="card-inner" id="cardInner">
+                <div class="card-front">
+                    <h2>Random Anime</h2>
+                    <img id="characterImg" alt="Anime Character">
+                    <p id="characterName">Character Name</p>
+                </div>
+                <div class="card-back">
+                    <h2>Character Details</h2>
+                    <p id="characterDetails">Details about the character will go here.</p>
+                    <p id="duration">Duration: </p>
+                    <p id="rating">Rating: </p>
+                    <p id="score">Score: </p>
+                    <p id="scoredBy">Scored By: </p>
+                    <p id="rank">Rank: </p>
+                    <p id="popularity">Popularity: </p>
+                    <p id="members">Members: </p>
+                    <p id="favorites">Favorites: </p>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="getAnimeCharacter()" class="suggest-button">
+                Suggest me new Anime
+            </button>
+            <button onclick="flipCard()" class="flip-button">
+                Flip Card
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function getAnimeCharacter() {
+            fetch('https://api.jikan.moe/v4/top/anime?type=movie')
+                .then(response => response.json())
+                .then(data => {
+                    const character = data.data[Math.floor(Math.random() * data.data.length)];
+                    document.getElementById('characterImg').src = character.images.jpg.image_url;
+                    document.getElementById('characterName').textContent = character.title;
+                    document.getElementById('characterDetails').textContent = character.synopsis;
+                    
+                    // Display additional details
+                    document.getElementById('duration').textContent = `Duration: ${character.duration}`;
+                    document.getElementById('rating').textContent = `Rating: ${character.rating}`;
+                    document.getElementById('score').textContent = `Score: ${character.score}`;
+                    document.getElementById('scoredBy').textContent = `Scored By: ${character.scored_by}`;
+                    document.getElementById('rank').textContent = `Rank: ${character.rank}`;
+                    document.getElementById('popularity').textContent = `Popularity: ${character.popularity}`;
+                    document.getElementById('members').textContent = `Members: ${character.members}`;
+                    document.getElementById('favorites').textContent = `Favorites: ${character.favorites}`;
+                })
+                .catch(error => console.error('Error fetching character:', error));
+        }
+
+        function flipCard() {
+            const cardInner = document.getElementById('cardInner');
+            cardInner.classList.toggle('flipped');
+        }
+
+        window.onload = getAnimeCharacter;  
+    </script>
+</body>
+</html>

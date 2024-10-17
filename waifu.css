@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, lightblue, lightgreen);
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 20px rgb(255, 0, 0);
+    }
+    33% {
+        box-shadow: 0 0 20px rgb(0, 255, 0);
+    }
+    66% {
+        box-shadow: 0 0 20px rgb(0, 0, 255);
+    }
+    100% {
+        box-shadow: 0 0 20px rgb(255, 0, 0);
+    }
+}
+
+.waifu-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: borderGlow 3s infinite;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+    background-color: #f8b400;
+    color: white;
+    transform: rotateY(180deg);
+    text-align: center;
+    overflow: auto;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+img {
+    width: 80%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+p {
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suggest-button,
+.flip-button {
+    background-color: #00B0FF;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 25px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px 0;
+}
+
+.suggest-button:hover {
+    background-color: #00A0E0;
+}
+
+.flip-button {
+    background-color: #FF4081;
+}
+
+.flip-button:hover {
+    background-color: #FF007A;
+}
