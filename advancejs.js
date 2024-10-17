@@ -102,8 +102,34 @@ console.log(my_object_as_string);
 var object_as_string_as_object=JSON.parse(my_object_as_string);//.parse is used to convert json into object
 console.log(object_as_string_as_object);
 
+// //changing html to json
+// const setHeader={
+//     headers:{
+//         Accept:"application/json"
+//     }
+// }
+// fetch('https://',setHeader)
+// .then(res)=>
+// {
+//     console.log(res.JSON);
+// }).catch((error)=>{
+//     console.log(error);
+// })
 
 
+//api using async-
+//const generateJokes= async() => {  //using async
+// const setHeader={
+//     headers:{
+//         Accept:"application/json"
+//     }
+// }
+//const res = await fetch('https://',setHeader);
+//const data = await res.json();
+//anime.innerhtml=data.name;//anime name and other details
+//}.catch(err)=>
+// {
+//     console.log(`the error is ${err}`);
 
 
 

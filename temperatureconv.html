@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Temperature</title>
+</head>
+
+<body>
+    <form id="TempCalc" onsubmit="calculateTemp(); return false;">
+        <label for="Temp">Please enter the Temperature</label>
+        <br/><input type="number" name="Temp" id="Temp">   
+        <select name="temp_diff" id="temp_diff">
+            <option value="cel">Celsius</option>
+            <option value="fah">Fahrenheit</option>
+        </select><br/>
+        <input type="submit" name="temp"><br/>
+        <span id="resultContainer"></span> 
+    </form>
+
+    <script>
+    const calculateTemp = () => {
+        const numberTemp = document.getElementById('Temp').value;
+        const tempSelected = document.getElementById('temp_diff');
+        const valueTemp = tempSelected.options[tempSelected.selectedIndex].value;
+
+        const celToFah = (cel) => {
+            let fahrenheit = Math.round((cel * 9/5) + 32);
+            return fahrenheit;
+        }
+
+     
+        const fahToCel = (fah) => {
+            let celsius = Math.round((fah - 32) * 5/9);
+            return celsius;
+        }
+
+        let result;
+        if(valueTemp === 'cel'){
+            result = celToFah(numberTemp);
+            document.getElementById('resultContainer').innerHTML = `${result}° Fahrenheit`;
+        } else {
+            result = fahToCel(numberTemp);
+            document.getElementById('resultContainer').innerHTML = `${result}° Celsius`;
+        }
+    }
+    </script>
+</body>
+</html>
